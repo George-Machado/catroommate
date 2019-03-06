@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestionChange : MonoBehaviour
+public class SpriteChange : MonoBehaviour
 {
-    public TextMesh [] _questions;
     // Start is called before the first frame update
+
+    public SpriteRenderer sprite;
     void Start()
     {
-        
+       sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
