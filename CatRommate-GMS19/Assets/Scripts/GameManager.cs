@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     {
         currentQuestion = 0;
         currentAnswer = 0;
+        badAnswers = 0;
+        goodAnswers = 0;
     }
 
    
@@ -31,5 +33,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
+    void Roomates()
+    {
+        
+    }
 }

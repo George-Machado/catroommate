@@ -1,20 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SpriteChange : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public SpriteRenderer sprite;
+    public int sprite;
+    
+    public SpriteRenderer sr; 
+    public Sprite[] spriteList;
     void Start()
     {
-       sprite = GetComponent<SpriteRenderer>();
+       sr = GetComponent<SpriteRenderer>();
+       sprite = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void IDKMANIDKMANTOLDUIDKLEMMEALONESUCKMYDICK()
+    {
+        if (GameManager.Instance.badAnswers  4 )
+        {
+            sr.sprite = spr;
+        }
     }
 }

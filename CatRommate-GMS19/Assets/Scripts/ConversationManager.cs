@@ -11,6 +11,8 @@ public class ConversationManager : MonoBehaviour
     public string[] answersRight;
     public string[] answersLeft;
 
+    private bool isLeft;
+
     public TextMeshProUGUI questionText;
     public Text answerRightText;
     public Text answerLeftText;
@@ -19,12 +21,18 @@ public class ConversationManager : MonoBehaviour
     {
         DisplayQuestions();
         DisplayAnswers();
+        isLeft = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        AnswerSelect();
+    }
+
+    private void AnswerSelect()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameManager.Instance.currentQuestion++;
             GameManager.Instance.currentAnswer++;
@@ -55,15 +63,11 @@ public class ConversationManager : MonoBehaviour
 
     }
 
-    void LogLeftAnswers()
+    void LogAnswers()
     {
         
     }
 
-    void LogRightAnswers()
-    {
-        
-    }
 
 }
 
