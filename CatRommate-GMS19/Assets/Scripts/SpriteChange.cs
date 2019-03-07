@@ -25,9 +25,6 @@ public class SpriteChange : MonoBehaviour
 
     public void IDKMANIDKMANTOLDUIDKLEMMEALONESUCKMYDICK()
     {
-        if (GameManager.Instance.badAnswers  4 )
-        {
-            sr.sprite = spr;
-        }
+        
     }
 }

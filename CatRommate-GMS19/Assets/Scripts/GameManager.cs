@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int currentQuestion;
-    public int currentAnswer;
+    public int mood;
+   
 
     public int goodAnswers;
     public int badAnswers;
@@ -21,7 +22,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentQuestion = 0;
-        currentAnswer = 0;
         badAnswers = 0;
         goodAnswers = 0;
     }

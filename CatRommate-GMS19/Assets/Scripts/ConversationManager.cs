@@ -11,7 +11,8 @@ public class ConversationManager : MonoBehaviour
     public string[] answersRight;
     public string[] answersLeft;
 
-    private bool isLeft;
+    private bool[] _isLeftCorrect;
+   
 
     public TextMeshProUGUI questionText;
     public Text answerRightText;
@@ -21,7 +22,7 @@ public class ConversationManager : MonoBehaviour
     {
         DisplayQuestions();
         DisplayAnswers();
-        isLeft = true;
+        
     }
 
     // Update is called once per frame
@@ -30,18 +31,19 @@ public class ConversationManager : MonoBehaviour
         AnswerSelect();
     }
 
-    private void AnswerSelect()
+   public void AnswerSelect()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
+            
         {
             GameManager.Instance.currentQuestion++;
-            GameManager.Instance.currentAnswer++;
+          
             DisplayQuestions();
-            DisplayAnswers();
+            
         }
     }
 
-    void DisplayQuestions()
+  public   void DisplayQuestions()
 
     {
         if (GameManager.Instance.currentQuestion < questions.Length) {
@@ -49,21 +51,21 @@ public class ConversationManager : MonoBehaviour
         }
     }
 
-    void DisplayAnswers()
+   public void DisplayAnswers()
     {
-        if (GameManager.Instance.currentAnswer < answersLeft.Length)
+        if (GameManager.Instance.currentQuestion < answersLeft.Length)
         {
-            answerLeftText.text = answersLeft[GameManager.Instance.currentAnswer];
+            answerLeftText.text = answersLeft[GameManager.Instance.currentQuestion];
         }
 
-        if (GameManager.Instance.currentAnswer < answersRight.Length)
+        if (GameManager.Instance.currentQuestion < answersRight.Length)
         {
-            answerRightText.text = answersRight[GameManager.Instance.currentAnswer];
+            answerRightText.text = answersRight[GameManager.Instance.currentQuestion];
         }
 
     }
 
-    void LogAnswers()
+  public void LogAnswers()
     {
         
     }
