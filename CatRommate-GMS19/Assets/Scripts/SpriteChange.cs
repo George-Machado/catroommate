@@ -23,8 +23,5 @@ public class SpriteChange : MonoBehaviour
         
     }
 
-    public void IDKMANIDKMANTOLDUIDKLEMMEALONESUCKMYDICK()
-    {
-        
-    }
+   
 }
