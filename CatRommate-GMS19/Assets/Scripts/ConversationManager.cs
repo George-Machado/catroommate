@@ -10,7 +10,7 @@ public class ConversationManager : MonoBehaviour
 
     public string[] answersRight;
     public string[] answersLeft;
-    private bool[] _isLeftCorrect = new bool[7];
+    public bool[] isLeftCorrect = new bool[7];
    
 
     public TextMeshProUGUI questionText;
@@ -21,13 +21,7 @@ public class ConversationManager : MonoBehaviour
     void Start()
     {
         DisplayQuestions();
-        _isLeftCorrect[0] = true;
-        _isLeftCorrect[1] = true;
-        _isLeftCorrect[2] = false;
-        _isLeftCorrect[3] = false;
-        _isLeftCorrect[4] = true;
-        _isLeftCorrect[5] = true;
-        _isLeftCorrect[6] = true;
+     
 
     }
 
@@ -43,9 +37,9 @@ public class ConversationManager : MonoBehaviour
             
         {
             GameManager.Instance.currentQuestion++;
-           
             DisplayQuestions();
-            
+            Final();
+          
         }
     }
 
@@ -68,19 +62,32 @@ public class ConversationManager : MonoBehaviour
 
   public void IsGood(bool leftSelected)
   {
-      if (_isLeftCorrect[GameManager.Instance.currentQuestion] == leftSelected) /// good answer
+     
+      if (isLeftCorrect[GameManager.Instance.currentQuestion] == leftSelected) 
       {
-          // good code
+          
           GameManager.Instance.mood++;
       }
       else
       {
-          // bad code
+       
           GameManager.Instance.mood--;
       }
 
       Debug.Log(GameManager.Instance.mood);
-      GameManager.Instance.currentQuestion++;
+     // GameManager.Instance.currentQuestion++;
+  }
+
+  public void Final()
+  {
+      if (GameManager.Instance.mood > 4 && GameManager.Instance.currentQuestion==7)
+      {
+          questionText.text = "Let's be roommates";
+      }
+      else
+      {
+          questionText.text = "I can't live with you";
+      }
   }
 
 

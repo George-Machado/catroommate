@@ -1,27 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEditor;
 using UnityEngine;
 
 public class SpriteChange : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public int sprite;
     
     public SpriteRenderer sr; 
     public Sprite[] spriteList;
     void Start()
     {
        sr = GetComponent<SpriteRenderer>();
-       sprite = 0;
+       
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       CatFace();
     }
 
-   
+    public void CatFace()
+    {
+        if (GameManager.Instance.mood > 2)
+        sr.sprite = spriteList[5];
+    }
+
 }

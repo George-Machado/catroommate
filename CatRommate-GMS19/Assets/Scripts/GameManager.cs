@@ -8,10 +8,7 @@ public class GameManager : MonoBehaviour
     public int currentQuestion;
     public int mood;
 
-
-    public int goodAnswers;
-    public int badAnswers;
-
+  
     // Start is called before the first frame update
 
     void Awake()
