@@ -11,7 +11,7 @@ public class ConversationManager : MonoBehaviour
     public string[] answersRight;
     public string[] answersLeft;
     public bool[] isLeftCorrect = new bool[7];
-   
+    public GameObject cat;
 
     public TextMeshProUGUI questionText;
     public Text answerRightText;
@@ -21,7 +21,8 @@ public class ConversationManager : MonoBehaviour
     void Start()
     {
         DisplayQuestions();
-     
+       
+
 
     }
 
@@ -67,24 +68,26 @@ public class ConversationManager : MonoBehaviour
       {
           
           GameManager.Instance.mood++;
+          SpriteChange.Instance.CatFace();
       }
       else
       {
        
           GameManager.Instance.mood--;
+          SpriteChange.Instance.CatFace();
       }
-
+   
       Debug.Log(GameManager.Instance.mood);
      // GameManager.Instance.currentQuestion++;
   }
 
   public void Final()
   {
-      if (GameManager.Instance.mood > 4 && GameManager.Instance.currentQuestion==7)
+      if (GameManager.Instance.mood >= 2 && GameManager.Instance.currentQuestion == 7)
       {
           questionText.text = "Let's be roommates";
       }
-      else
+      else if(GameManager.Instance.mood <= 2 && GameManager.Instance.currentQuestion == 7)
       {
           questionText.text = "I can't live with you";
       }
