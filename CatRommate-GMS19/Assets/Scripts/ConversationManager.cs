@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ConversationManager : MonoBehaviour
 {
     public string[] questions;
-
+public st
     public string[] rooms;
     
     public string[] answersRight;
@@ -38,14 +38,9 @@ public class ConversationManager : MonoBehaviour
 
    public void AnswerSelect()
     {
-       
-            
-        
             GameManager.Instance.currentQuestion++;
             DisplayQuestions();
             Final();
-          
-        
     }
 
   public void DisplayQuestions()
