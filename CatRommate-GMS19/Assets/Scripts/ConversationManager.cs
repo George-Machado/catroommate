@@ -8,6 +8,8 @@ public class ConversationManager : MonoBehaviour
 {
     public string[] questions;
 
+    public string[] rooms;
+    
     public string[] answersRight;
     public string[] answersLeft;
     public bool[] isLeftCorrect = new bool[7];
@@ -16,6 +18,8 @@ public class ConversationManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public Text answerRightText;
     public Text answerLeftText;
+    
+   
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +33,19 @@ public class ConversationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnswerSelect();
+       
     }
 
    public void AnswerSelect()
     {
-        if (Input.GetMouseButtonDown(0))
+       
             
-        {
+        
             GameManager.Instance.currentQuestion++;
             DisplayQuestions();
             Final();
           
-        }
+        
     }
 
   public void DisplayQuestions()
@@ -76,7 +80,8 @@ public class ConversationManager : MonoBehaviour
           GameManager.Instance.mood--;
           SpriteChange.Instance.CatFace();
       }
-   
+
+      AnswerSelect();
       Debug.Log(GameManager.Instance.mood);
      // GameManager.Instance.currentQuestion++;
   }
