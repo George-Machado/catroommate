@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpriteChange : MonoBehaviour
 {
@@ -10,12 +11,13 @@ public class SpriteChange : MonoBehaviour
     
     public SpriteRenderer sr; 
     public Sprite[] spriteList;
+    public Image background;
+    public Sprite[] rooms;
     void Start()
     {
        sr = GetComponent<SpriteRenderer>();
+       background = GetComponent<Image>();
        Instance = this;
-
-
     }
 
     // Update is called once per frame
@@ -23,6 +25,17 @@ public class SpriteChange : MonoBehaviour
     {
       
     }
+
+    public void ChangeRooms()
+    {
+
+        background.sprite = rooms[1];
+        background.sprite = rooms[2];
+        
+    }
+    
+       
+
 
     public void CatFace()
     {

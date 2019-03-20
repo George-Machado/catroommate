@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int currentQuestion;
     public int mood;
+    
    
   
     // Start is called before the first frame update

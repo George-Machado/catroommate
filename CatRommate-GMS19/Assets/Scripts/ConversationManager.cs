@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class ConversationManager : MonoBehaviour
 {
     public string[] questions;
-public st
-    public string[] rooms;
+  
     
     public string[] answersRight;
     public string[] answersLeft;
     public bool[] isLeftCorrect = new bool[7];
-    public GameObject cat;
+    public string [] livingRoom;
+    public string[] livingRoomRight;
+    public string[] livingRoomLeft; 
 
     public TextMeshProUGUI questionText;
     public Text answerRightText;
@@ -25,8 +26,6 @@ public st
     void Start()
     {
         DisplayQuestions();
-       
-
 
     }
 
