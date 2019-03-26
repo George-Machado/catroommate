@@ -6,26 +6,45 @@ using UnityEngine.UI;
 
 public class ConversationManager : MonoBehaviour
 {
-    public string[] questions;
-  
-    
-    public string[] answersRight;
-    public string[] answersLeft;
-    public bool[] isLeftCorrect = new bool[7];
-    public string [] livingRoom;
+    public string[] livingRoomQ;
     public string[] livingRoomRight;
-    public string[] livingRoomLeft; 
+    public string[] livingRoomLeft;
+    
+    public string[] kitchenQ;
+    public string[] kitchenRight;
+    public string[] kitchenLeft;
+    
+    public string[] bathroomQ;
+    public string[] bathroomRight;
+    public string[] bathroomLeft;
 
+    public static ConversationManager Instance;
+    
+ 
+    public bool[] isLeftCorrect = new bool[7]; 
+    
     public TextMeshProUGUI questionText;
     public Text answerRightText;
     public Text answerLeftText;
     
-   
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+        DontDestroyOnLoad(this);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        DisplayQuestions();
+        UpdateQuestionDisplay();
 
     }
 
@@ -35,28 +54,35 @@ public class ConversationManager : MonoBehaviour
        
     }
 
-   public void AnswerSelect()
+    public void AnswerSelect()
     {
-            GameManager.Instance.currentQuestion++;
-            DisplayQuestions();
-            Final();
+        GameManager.Instance.currentQuestion++;
+        UpdateQuestionDisplay();
+        Final();
     }
 
-  public void DisplayQuestions()
-
+    public void UpdateQuestionDisplay()
     {
-        if (GameManager.Instance.currentQuestion < questions.Length) {
-            questionText.text = questions[GameManager.Instance.currentQuestion];
-        }  
-        if (GameManager.Instance.currentQuestion < answersLeft.Length)
-                 {
-                     answerLeftText.text = answersLeft[GameManager.Instance.currentQuestion];
-                 }
-         
-    if (GameManager.Instance.currentQuestion < answersRight.Length)
-                 {
-                     answerRightText.text = answersRight[GameManager.Instance.currentQuestion];
-                 }
+        var currentQuestion = GameManager.Instance.currentQuestion;
+        
+        switch (BackgroundChange.Instance.currentRoom)
+        {
+            case 0 when currentQuestion < livingRoomQ.Length:
+                questionText.text = livingRoomQ[currentQuestion];
+                answerLeftText.text = livingRoomLeft[currentQuestion];
+                answerRightText.text = livingRoomRight[currentQuestion];
+                break;
+            case 1 when GameManager.Instance.currentQuestion < kitchenQ.Length:
+                questionText.text = kitchenQ[GameManager.Instance.currentQuestion];
+                answerLeftText.text = kitchenLeft[currentQuestion];
+                answerRightText.text = kitchenRight[currentQuestion];
+                break;
+            default:
+                questionText.text = bathroomQ[GameManager.Instance.currentQuestion];
+                answerLeftText.text = bathroomLeft[currentQuestion];
+                answerRightText.text = bathroomRight[currentQuestion];
+                break;
+        }
     }
 
   public void IsGood(bool leftSelected)
@@ -65,31 +91,43 @@ public class ConversationManager : MonoBehaviour
       if (isLeftCorrect[GameManager.Instance.currentQuestion] == leftSelected) 
       {
           
-          GameManager.Instance.mood++;
-          SpriteChange.Instance.CatFace();
+          GameManager.Instance.aggressive++;
+          CatChange.Instance.CatFace();
       }
       else
       {
        
-          GameManager.Instance.mood--;
-          SpriteChange.Instance.CatFace();
+          GameManager.Instance.bitchMade++;
+          CatChange.Instance.CatFace();
       }
 
       AnswerSelect();
-      Debug.Log(GameManager.Instance.mood);
+      Debug.Log(GameManager.Instance.aggressive);
      // GameManager.Instance.currentQuestion++;
   }
 
   public void Final()
   {
-      if (GameManager.Instance.mood >= 2 && GameManager.Instance.currentQuestion == 7)
+      if (GameManager.Instance.currentQuestion == 7)
       {
-          questionText.text = "Let's be roommates";
+          if (GameManager.Instance.aggressive > GameManager.Instance.bitchMade)
+          {
+              questionText.text = "Ok dude I'm out";
+          }
+          else
+          {
+              questionText.text = "I'm having a few people over it'll be a small party 100-150 max";
+          }
       }
-      else if(GameManager.Instance.mood <= 2 && GameManager.Instance.currentQuestion == 7)
+      /*
+      if (GameManager.Instance.aggressive >= 18 && GameManager.Instance.currentQuestion == 7)
       {
-          questionText.text = "I can't live with you";
+          questionText.text = "Ok dude I'm out";
       }
+      else if(GameManager.Instance.mood <= 18 && GameManager.Instance.currentQuestion == 7)
+      {
+          questionText.text = "I'm having a few people over it'll be a small party 100-150 max";
+      } */
   }
 
 

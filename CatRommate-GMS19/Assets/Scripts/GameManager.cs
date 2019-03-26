@@ -7,21 +7,33 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int currentQuestion;
     public int mood;
-    
+    public int aggressive;
+    public int bitchMade;
    
   
     // Start is called before the first frame update
 
-    void Awake()
+    private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
         currentQuestion = 0;
         mood = 0;
-        
+        aggressive = 0;
+        bitchMade = 0;
+
     }
 
 

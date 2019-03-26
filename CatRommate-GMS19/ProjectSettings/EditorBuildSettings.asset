@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Start screen.unity
-    guid: f0dbbcdaa04134be3b7fa35ef7336efb
   - enabled: 1
     path: Assets/Scenes/catrooom.unity
     guid: 7cd7d89dece9c4c7e83b93b3f43bc203
