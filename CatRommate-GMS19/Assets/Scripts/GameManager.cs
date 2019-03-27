@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int currentQuestion;
-    public int mood;
+  
     public int aggressive;
     public int bitchMade;
    
@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
     }
 
     void Start()
     {
         currentQuestion = 0;
-        mood = 0;
+     
         aggressive = 0;
         bitchMade = 0;
 

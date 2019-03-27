@@ -302,7 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentQuestion: 0
-  mood: 0
   aggressive: 0
   bitchMade: 0
 --- !u!4 &201771759
@@ -455,7 +454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 439916686}
   - component: {fileID: 439916689}
-  - component: {fileID: 439916688}
   - component: {fileID: 439916687}
   m_Layer: 5
   m_Name: RightButton
@@ -481,8 +479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 183, y: -157}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 196, y: -157}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439916687
 MonoBehaviour:
@@ -505,9 +503,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7607844, g: 0.4431373, b: 0.43529415, a: 1}
-    m_HighlightedColor: {r: 0.066037714, g: 0.05513526, b: 0.05513526, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.9333334, g: 0.43137258, b: 0.38431376, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -520,7 +518,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 439916688}
+  m_TargetGraphic: {fileID: 875865546}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -537,35 +535,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &439916688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439916685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.4247953, b: 0.4247953, a: 0.99215686}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
 --- !u!222 &439916689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -586,7 +555,7 @@ GameObject:
   - component: {fileID: 875865547}
   - component: {fileID: 875865546}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -52, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875865546
@@ -624,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8283355, g: 0.8396226, b: 0.1782218, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -634,9 +603,9 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 23
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -663,7 +632,6 @@ GameObject:
   m_Component:
   - component: {fileID: 997361108}
   - component: {fileID: 997361111}
-  - component: {fileID: 997361110}
   - component: {fileID: 997361109}
   m_Layer: 5
   m_Name: LeftButton
@@ -689,7 +657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193, y: -156.3}
+  m_AnchoredPosition: {x: 11, y: -332}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997361109
@@ -712,10 +680,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.7607843, g: 0.44313726, b: 0.43529412, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_NormalColor: {r: 0.7058824, g: 0.45098042, b: 0.43137258, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -728,7 +696,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 997361110}
+  m_TargetGraphic: {fileID: 1590074429}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -745,35 +713,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &997361110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997361107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8117647, g: 0.42352942, b: 0.42352942, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
 --- !u!222 &997361111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -860,7 +799,7 @@ GameObject:
   - component: {fileID: 1590074430}
   - component: {fileID: 1590074429}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LeftText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,8 +821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.2, y: -5.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -165, y: 98}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590074429
 MonoBehaviour:
@@ -898,7 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8313726, g: 0.82745105, b: 0.31764707, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -907,8 +846,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
-    m_FontStyle: 0
+    m_FontSize: 23
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -1038,75 +977,51 @@ MonoBehaviour:
   livingRoomQ:
   - Yo bro, you wanna smoke?
   - I thought it was house weed man.
-  - 'Yeh '
-  - 
-  - 
-  - 
-  - 
+  - So you want some?
+  - Cool brah brah, no problem.
+  - Oh, you wanted it now?
+  - 'Damn, I''m out, next time. '
+  - Chill out man it's not that serious.
   livingRoomRight:
   - Sure... I guess
   - I mean I like to share with the house but you should ask.
-  - 
-  - 
-  - 
-  - 
-  - 
+  - No, I want my money.
+  - Ok....where the fuck is it?
+  - Yes b, now!
+  - It's cool I understand. Weed amirite?
+  - Well you offered....
   livingRoomLeft:
   - Dude wtf, is that my weed?
   - It was in my room. Run me my $60.
-  - 
-  - 
-  - 
-  - 
-  - 
-  kitchenQ:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  kitchenRight:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  kitchenLeft:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Yes actually.
+  - Pass it here.
+  - Well you just offered so I thought.
+  - I'm about to fuck you up.
+  - if you don't get the fuck out of here
   bathroomQ:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Sup man
+  - I'm just trying to clog the drain with hairballs to make a swimming pool
+  - You wanna swim?
+  - Makes sense, Make sense.
+  - Well, I mean,  like I've already started so...
+  - Look I'm a CAT FISH get it?
+  - Splish Splash I was taking bath. duh duh duh
   bathroomRight:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hey..?
+  - I guess that's cool.
+  - No, I want you to not clog the drain.
+  - So can you not?
+  - Yo, you are really blowing mines!
+  - 'HAH great joke '
+  - Yea I love that song too.
   bathroomLeft:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - What are you doing in here?
+  - WTF?!
+  - Umm,that sounds nice, but I don't think our landlord is gonna like that.
+  - So, when do you think you'll clean this up?
+  - Yeah, I guess I understand it does look like fun.
+  - Yeah I like my catfish fried. What's good?
+  - I'm gonna splish splash my foot in your ass.
   isLeftCorrect: 01010000000101
   questionText: {fileID: 136888742}
   answerRightText: {fileID: 875865546}
@@ -1243,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: -25.8}
+  m_AnchoredPosition: {x: 332, y: 132}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774346825
@@ -1425,9 +1340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 0}
   rooms:
-  - {fileID: 21300000, guid: 2c54bbccad94e4fd784ead626298898a, type: 3}
-  - {fileID: 21300000, guid: c21223a6e522649988ef13d3a29015dc, type: 3}
   - {fileID: 21300000, guid: b099beff80c954ecf9b09ec8f50e4c79, type: 3}
+  - {fileID: 21300000, guid: 2c54bbccad94e4fd784ead626298898a, type: 3}
   currentRoom: 0
 --- !u!1 &2059536080
 GameObject:
@@ -1503,7 +1417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059536080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 172, y: -42, z: -0.5}
+  m_LocalPosition: {x: 172, y: -42, z: -0.8}
   m_LocalScale: {x: 35.89159, y: 35.89159, z: 45.104008}
   m_Children: []
   m_Father: {fileID: 0}

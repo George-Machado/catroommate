@@ -10,9 +10,7 @@ public class ConversationManager : MonoBehaviour
     public string[] livingRoomRight;
     public string[] livingRoomLeft;
     
-    public string[] kitchenQ;
-    public string[] kitchenRight;
-    public string[] kitchenLeft;
+  
     
     public string[] bathroomQ;
     public string[] bathroomRight;
@@ -72,12 +70,7 @@ public class ConversationManager : MonoBehaviour
                 answerLeftText.text = livingRoomLeft[currentQuestion];
                 answerRightText.text = livingRoomRight[currentQuestion];
                 break;
-            case 1 when GameManager.Instance.currentQuestion < kitchenQ.Length:
-                questionText.text = kitchenQ[GameManager.Instance.currentQuestion];
-                answerLeftText.text = kitchenLeft[currentQuestion];
-                answerRightText.text = kitchenRight[currentQuestion];
-                break;
-            default:
+        case 1 when currentQuestion < bathroomQ.Length:
                 questionText.text = bathroomQ[GameManager.Instance.currentQuestion];
                 answerLeftText.text = bathroomLeft[currentQuestion];
                 answerRightText.text = bathroomRight[currentQuestion];
@@ -112,11 +105,11 @@ public class ConversationManager : MonoBehaviour
       {
           if (GameManager.Instance.aggressive > GameManager.Instance.bitchMade)
           {
-              questionText.text = "Ok dude I'm out";
+              questionText.text = "Ok dude I'm out.";
           }
           else
           {
-              questionText.text = "I'm having a few people over it'll be a small party 100-150 max";
+              questionText.text = "I'm having a few people over it'll be a small party 100-150 max.";
           }
       }
       /*
